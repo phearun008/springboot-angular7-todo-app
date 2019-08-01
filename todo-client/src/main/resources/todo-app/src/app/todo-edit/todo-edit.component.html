@@ -1,0 +1,9 @@
+<h3>{{isEdit ? 'Edit Todo': 'Add Todo'}}</h3>
+
+<form #todoForm="ngForm" (ngSubmit)="save(todoForm.value)">
+    <input type="hidden" [(ngModel)]="todo.id" name="id"/>
+    <input type="text" [(ngModel)]="todo.title" required name="title"/>
+    <button type="submit">Save</button>
+</form>
+<button *ngIf="todo.id" (click)="remove(todo.id)">Remove</button>
+<button type="button" [routerLink]="['/todo-list']">Go Back</button>

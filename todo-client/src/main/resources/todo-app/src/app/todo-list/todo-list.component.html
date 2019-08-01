@@ -1,0 +1,5 @@
+<ul class="test" *ngFor="let todo of todos">
+    <li><a [routerLink]="['/todo-edit', todo.id]">{{todo.title}}</a></li>
+</ul>
+<button [routerLink]="['/todo-add']">Add Todo</button>
+<img src="./assets/image/todo.jpg" width="100px">
